@@ -24,12 +24,9 @@ Provides standardized support for obtaining environment, version, and heartbeat 
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_ops` to your list of dependencies in `mix.exs`:
-
 ```elixir
 def deps do
-  [{:ex_ops, "~> 0.1.0"}]
+  [{:ex_ops, git: "https://github.com/rentpath/ex_ops.git", tag: "0.1.0"}]
 end
 ```
 

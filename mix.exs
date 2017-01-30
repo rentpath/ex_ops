@@ -9,13 +9,10 @@ defmodule ExOps.Mixfile do
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
-      test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [
-        "coveralls": :test,
-        "coveralls.detail": :test,
-        "coveralls.post": :test,
-        "coveralls.html": :test
-      ],
+      description: description(),
+      package: package(),
+      test_coverage: test_coverage(),
+      preferred_cli_env: preferred_cli_env(),
    ]
   end
 
@@ -41,6 +38,35 @@ defmodule ExOps.Mixfile do
       {:credo, "~> 0.6.0", only: [:dev, :test]},
       {:plug, "~> 1.0"},
       {:poison, ">= 1.4.0"},
+    ]
+  end
+
+  defp description do
+    """
+    Provides standardized support for obtaining environment, version, and heartbeat information in JSON format
+    """
+  end
+
+  defp package do
+    [
+      name: :ex_ops,
+      files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["devadmin@rentpath.com", "Pasha Lifshiz <plifshiz@gmail.com>"],
+      links: %{"GitHub" => "https://github.com/rentpath/ex_ops"},
+      licenses: ["The MIT License"]
+    ]
+  end
+
+  defp test_coverage do
+    [tool: ExCoveralls]
+  end
+
+  defp preferred_cli_env do
+    [
+      "coveralls": :test,
+      "coveralls.detail": :test,
+      "coveralls.post": :test,
+      "coveralls.html": :test
     ]
   end
 end

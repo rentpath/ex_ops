@@ -1,4 +1,4 @@
-# Changelog for v0.1.0
+# Changelog for 0.1.0
 
 ## Highlights
 - initial setup

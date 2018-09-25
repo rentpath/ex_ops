@@ -36,6 +36,7 @@ defmodule ExOps.Mixfile do
 
   defp deps do
     [
+      {:ex_doc, ">= 0.0.0", only: :dev},
       {:excoveralls, "~> 0.10", only: :test},
       {:credo, "~> 0.10", only: [:dev, :test]},
       {:plug, "~> 1.0"},

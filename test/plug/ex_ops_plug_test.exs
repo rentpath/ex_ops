@@ -6,8 +6,11 @@ defmodule ExOps.PlugTest do
 
   describe "/ops/version" do
     test "returns versioning information" do
-      conn = conn(:get, "/version")
-      conn = Plug.call(conn, [])
+      conn =
+        :get
+        |> conn("/version")
+        |> Plug.call([])
+
       data = Poison.decode!(conn.resp_body)
 
       assert conn.state == :sent
@@ -19,8 +22,11 @@ defmodule ExOps.PlugTest do
 
   describe "/ops/env" do
     test "returns env information" do
-      conn = conn(:get, "/env")
-      conn = Plug.call(conn, [])
+      conn =
+        :get
+        |> conn("/env")
+        |> Plug.call([])
+
       data = Poison.decode!(conn.resp_body)
 
       assert conn.state == :sent
@@ -31,8 +37,11 @@ defmodule ExOps.PlugTest do
 
   describe "/ops/heartbeat" do
     test "returns heartbeat data" do
-      conn = conn(:get, "/heartbeat")
-      conn = Plug.call(conn, [])
+      conn =
+        :get
+        |> conn("/heartbeat")
+        |> Plug.call([])
+
       data = Poison.decode!(conn.resp_body)
 
       assert conn.state == :sent
@@ -43,8 +52,10 @@ defmodule ExOps.PlugTest do
   end
 
   test "pass through connection" do
-    conn = conn(:get, "/ver")
-    conn = Plug.call(conn, [])
+    conn =
+      :get
+      |> conn("/ver")
+      |> Plug.call([])
 
     assert is_nil(conn.status)
   end

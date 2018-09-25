@@ -35,7 +35,7 @@ defmodule ExOps.BuildDetails do
     %__MODULE__{
       build_number: build_number,
       commit_sha: commit_sha,
-      short_commit_sha: commit_sha |> String.slice(0..6),
+      short_commit_sha: String.slice(commit_sha, 0..6),
       date: deploy_info_date(deploy_info_file),
       tag: tag,
     }
@@ -52,7 +52,8 @@ defmodule ExOps.BuildDetails do
   end
 
   defp parse_file(file, pattern) do
-    Regex.scan(pattern, file, capture: :all_but_first)
+    pattern
+    |> Regex.scan(file, capture: :all_but_first)
     |> Enum.map(&List.first/1)
   end
 end

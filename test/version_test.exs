@@ -1,10 +1,11 @@
 defmodule ExOps.VersionTest do
   use ExUnit.Case, async: true
-  alias ExOps.{Version, HostInfo}
+  alias ExOps.{HostInfo, Version}
 
   describe ".details" do
     test "response includes deployment" do
-      assert Version.details.deployment |> Map.has_key?(:__struct__)
+      deployment_details = Version.details.deployment
+      assert Map.has_key?(deployment_details, :__struct__)
     end
 
     test "response includes host" do

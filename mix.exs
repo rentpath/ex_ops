@@ -4,7 +4,7 @@ defmodule ExOps.Mixfile do
   def project do
     [
       app: :ex_ops,
-      version: "0.1.0",
+      version: "1.0.0",
       elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -13,6 +13,8 @@ defmodule ExOps.Mixfile do
       package: package(),
       test_coverage: test_coverage(),
       preferred_cli_env: preferred_cli_env(),
+      name: "ex_ops",
+      source_url: "https://github.com/rentpath/ex_ops"
    ]
   end
 
@@ -50,7 +52,7 @@ defmodule ExOps.Mixfile do
   defp package do
     [
       name: :ex_ops,
-      files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["devadmin@rentpath.com", "Pasha Lifshiz <plifshiz@gmail.com>"],
       links: %{"GitHub" => "https://github.com/rentpath/ex_ops"},
       licenses: ["The MIT License"]

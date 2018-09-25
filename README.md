@@ -26,7 +26,7 @@ Provides standardized support for obtaining environment, version, and heartbeat 
 
 ```elixir
 def deps do
-  [{:ex_ops, git: "https://github.com/rentpath/ex_ops.git", tag: "0.1.0"}]
+  [{:ex_ops, "~> 1.0.0"}]
 end
 ```
 

@@ -5,7 +5,7 @@ defmodule ExOps.BuildDetails do
   """
 
   defstruct [:build_number, :commit_sha, :date, :short_commit_sha, :tag]
-  @spec full(Map) :: Map
+  @spec full(map()) :: map()
   def full(info_files \\ default_info_files()) do
     Map.merge(
       build_info(info_files.build_info_file, info_files.deploy_info_file),

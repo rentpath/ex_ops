@@ -3,7 +3,7 @@ defmodule ExOps.Version do
   Provides information about curent and previous deployments
   """
   defstruct [:deployment, :host]
-  @type t :: %__MODULE__{deployment: Map, host: String.t}
+  @type t :: %__MODULE__{deployment: map(), host: String.t()}
 
   alias ExOps.{BuildDetails, HostInfo}
 

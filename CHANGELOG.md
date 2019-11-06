@@ -1,12 +1,22 @@
-# Changelog for 0.1.0
+# Changelog
 
-## Highlights
-- initial setup
-
-### Enhancements
+## 1.1.0
 
 ### Bug fixes
 
-### Deprecations
+* Address compiler warnings on Elixir 1.8
+
+## 1.0.0
+
+## 0.1.0
+
+### Highlights
+- initial setup
+
+#### Enhancements
+
+#### Bug fixes
+
+#### Deprecations
 
 ## Previous versions

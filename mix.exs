@@ -4,8 +4,8 @@ defmodule ExOps.Mixfile do
   def project do
     [
       app: :ex_ops,
-      version: "1.0.0",
-      elixir: "~> 1.6",
+      version: "1.1.0",
+      elixir: "~> 1.8",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -37,8 +37,8 @@ defmodule ExOps.Mixfile do
   defp deps do
     [
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:excoveralls, "~> 0.10", only: :test},
-      {:credo, "~> 0.10", only: [:dev, :test]},
+      {:excoveralls, "~> 0.12", only: :test},
+      {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
       {:plug, "~> 1.0"},
       {:poison, "~> 3.0"},
     ]

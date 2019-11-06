@@ -1,12 +1,23 @@
-# Changelog for 0.1.0
+# Changelog
 
-## Highlights
-- initial setup
+## 1.1.0
 
-### Enhancements
+Breaking Changes
 
-### Bug fixes
+* Require Elixir 1.8 or greater
 
-### Deprecations
+Bugfixes
 
-## Previous versions
+* Address compiler warnings when building on Elixir 1.9 caused by dependencies
+
+## 1.0.0
+
+Bugfixes
+
+* Address some compiler warnings
+
+## 0.1.0
+
+Highlights
+
+* initial setup

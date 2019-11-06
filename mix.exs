@@ -39,6 +39,7 @@ defmodule ExOps.Mixfile do
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:excoveralls, "~> 0.12", only: :test},
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:plug, "~> 1.0"},
       {:poison, "~> 3.0"},
     ]

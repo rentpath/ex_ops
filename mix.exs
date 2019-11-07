@@ -14,7 +14,8 @@ defmodule ExOps.Mixfile do
       test_coverage: test_coverage(),
       preferred_cli_env: preferred_cli_env(),
       name: "ex_ops",
-      source_url: "https://github.com/rentpath/ex_ops"
+      source_url: "https://github.com/rentpath/ex_ops",
+      elixirc_options: [warnings_as_errors: true]
    ]
   end
 
@@ -25,10 +26,22 @@ defmodule ExOps.Mixfile do
         build_info_regex: ~r/:\s([\w|-]+)/,
         deploy_info_regex: ~r/:\s\"(.+)\"\n/,
         info_files: %{
-          build_info_file: "../BUILD-INFO",
-          deploy_info_file: "../DEPLOY-INFO",
-          previous_build_info_file: "../PREVIOUS-BUILD-INFO",
-          previous_deploy_info_file: "../PREVIOUS-DEPLOY-INFO",
+          build_info_file: %{
+            type: :path,
+            path: "../BUILD-INFO"
+          },
+          deploy_info_file: %{
+            type: :path,
+            path: "../DEPLOY-INFO",
+          },
+          previous_build_info_file: %{
+            type: :path,
+            path: "../PREVIOUS-BUILD-INFO"
+          },
+          previous_deploy_info_file: %{
+            type: :path,
+            path: "../PREVIOUS-DEPLOY-INFO"
+          }
         }
       ],
     ]
@@ -39,6 +52,7 @@ defmodule ExOps.Mixfile do
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:excoveralls, "~> 0.12", only: :test},
       {:credo, "~> 1.1", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:plug, "~> 1.0"},
       {:poison, "~> 3.0"},
     ]

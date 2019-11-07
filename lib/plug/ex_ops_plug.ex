@@ -23,7 +23,7 @@ defmodule ExOps.Plug do
 
   match _, do: conn
 
-  @spec call(Map, List) :: Map
+  @spec call(Plug.Conn.t(), list()) :: Plug.Conn.t()
   def call(conn, opts) do
     conn
     |> Map.update(:path_info, "/", &Enum.take(&1, -1))

@@ -22,7 +22,7 @@ defmodule ExOps.BuildDetails do
     case Map.get(info_file, :type) do
       :priv_dir ->
         application = Map.get(info_file, :application)
-        :erlang.iolist_to_binary([:code.priv_dir(application), file_path])
+        :erlang.iolist_to_binary([:code.priv_dir(application), "/", file_path])
       :path  ->
         file_path
     end

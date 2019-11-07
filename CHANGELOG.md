@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.0
+
+Breaking Changes
+
+* Config format changed to support using priv directories instead of relative or absolute
+paths. The value for each of the info file keys must be a map of options instead of a
+string representing the path. The map must contain a `:type` and `:path` key, and
+optionally, an `:application` key.
+
 ## 1.1.0
 
 Breaking Changes

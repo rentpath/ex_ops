@@ -14,7 +14,8 @@ defmodule ExOps.Mixfile do
       test_coverage: test_coverage(),
       preferred_cli_env: preferred_cli_env(),
       name: "ex_ops",
-      source_url: "https://github.com/rentpath/ex_ops"
+      source_url: "https://github.com/rentpath/ex_ops",
+      elixirc_options: [warnings_as_errors: true]
    ]
   end
 

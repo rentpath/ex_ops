@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.0
+
+Bugfixes
+
+* Add missing slash to between priv directory path and the filename path. Filenames
+relative to the priv directory no longer have to start with a slash.
+
 ## 2.0.0
 
 Breaking Changes

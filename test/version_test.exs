@@ -4,7 +4,7 @@ defmodule ExOps.VersionTest do
 
   describe ".details" do
     test "response includes deployment" do
-      deployment_details = Version.details.deployment
+      deployment_details = Version.details().deployment
       assert Map.has_key?(deployment_details, :__struct__)
     end
 

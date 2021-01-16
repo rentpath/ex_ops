@@ -26,7 +26,7 @@ Provides standardized support for obtaining environment, version, and heartbeat 
 
 ```elixir
 def deps do
-  [{:ex_ops, "~> 2.1.0"}]
+  [{:ex_ops, "~> 2.2.0"}]
 end
 ```
 

@@ -5,6 +5,18 @@ defmodule ExOps.BuildDetails do
   """
 
   defstruct [:build_number, :commit_sha, :date, :short_commit_sha, :tag]
+
+  defimpl Jason.Encoder, for: __MODULE__ do
+    alias Jason.Encode
+
+    @spec encode(struct(), Encode.opts()) :: iodata()
+    def encode(struct, options) do
+      struct
+      |> Map.from_struct()
+      |> Encode.map(options)
+    end
+  end
+
   @spec full(map()) :: map()
   def full(info_files \\ default_info_files()) do
     Map.merge(

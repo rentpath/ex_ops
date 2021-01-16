@@ -18,7 +18,7 @@ defmodule ExOps.BuildDetailsTest do
       assert BuildDetails.full(info_files) == detail_info
     end
 
-    def valid_info_files do
+    defp valid_info_files do
       %{
         build_info_file: %{
           type: :path,

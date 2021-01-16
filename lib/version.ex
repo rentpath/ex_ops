@@ -1,12 +1,16 @@
 defmodule ExOps.Version do
-  @moduledoc"""
-  Provides information about curent and previous deployments
+  @moduledoc """
+  Provides information about current and previous deployments
   """
-  defstruct [:deployment, :host]
-  @type t :: %__MODULE__{deployment: map(), host: String.t()}
 
   alias ExOps.{BuildDetails, HostInfo}
 
+  @derive Jason.Encoder
+  defstruct [:deployment, :host]
+
+  @type t :: %__MODULE__{deployment: map(), host: String.t()}
+
+  @spec details() :: __MODULE__.t()
   def details do
     %__MODULE__{
       deployment: BuildDetails.full(),

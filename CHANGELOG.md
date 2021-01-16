@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.2.0
+
+Breaking Changes
+
+* Require Elixir 1.10 or greater.
+* Upgrade dependencies.
+* Use `Jason` instead of `Poison`.
+
+Bugfixes
+
+* Address `Credo` warnings.
+
 ## 2.1.0
 
 Bugfixes

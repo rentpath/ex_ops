@@ -11,7 +11,7 @@ defmodule ExOps.PlugTest do
         |> conn("/version")
         |> Plug.call([])
 
-      data = Poison.decode!(conn.resp_body)
+      data = Jason.decode!(conn.resp_body)
 
       assert conn.state == :sent
       assert conn.status == 200
@@ -27,7 +27,7 @@ defmodule ExOps.PlugTest do
         |> conn("/env")
         |> Plug.call([])
 
-      data = Poison.decode!(conn.resp_body)
+      data = Jason.decode!(conn.resp_body)
 
       assert conn.state == :sent
       assert conn.status == 200
@@ -42,7 +42,7 @@ defmodule ExOps.PlugTest do
         |> conn("/heartbeat")
         |> Plug.call([])
 
-      data = Poison.decode!(conn.resp_body)
+      data = Jason.decode!(conn.resp_body)
 
       assert conn.state == :sent
       assert conn.status == 200

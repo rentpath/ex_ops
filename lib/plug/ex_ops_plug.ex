@@ -33,6 +33,6 @@ defmodule ExOps.Plug do
   defp render(conn, payload) do
     conn
     |> put_resp_content_type("application/json")
-    |> send_resp(200, Poison.encode!(payload))
+    |> send_resp(200, Jason.encode!(payload))
   end
 end
